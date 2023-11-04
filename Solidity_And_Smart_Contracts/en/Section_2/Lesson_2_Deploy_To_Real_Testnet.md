@@ -26,6 +26,9 @@ This is complicated. And, don't worry if you don't fully understand it. As you w
 
 So, make an account with QuickNode [here](https://www.quicknode.com/?utm_source=buildspace&utm_campaign=generic&utm_content=sign-up&utm_medium=buildspace).
 
+From the menu navigate to Endpoints -> Create Endpoint -> Ethereum -> Sepolia -> Create Endpoint 
+The below video will help you.
+
 Checkout the video below to see how to get your API key for a testnet!
 [Loom](https://www.loom.com/share/c079028c612340e8b7439d0d2103a313)
 
@@ -47,19 +50,16 @@ So, you'll be doing all this within the next few lessons :).
 
 ## 🤑 Getting some fake $
 
-There are a few testnets out there and the one we'll be using is called "Goerli" which is run by the Ethereum foundation.
+There are a few testnets out there and the one we'll be using is called "Sepolia" which is run by the Ethereum foundation.
 
-In order to deploy to Goerli, we need fake ether. Why? Because if you were deploying to the actual Ethereum mainnet, you'd use real money! So, testnets copy how mainnet works, only difference is no real money is involved.
+In order to deploy to Sepolia, we need fake ether. Why? Because if you were deploying to the actual Ethereum mainnet, you'd use real money! So, testnets copy how mainnet works, only difference is no real money is involved.
 
-In order to get fake ETH, we have to ask the network for some. **This fake ETH will only work on this specific testnet.** You can grab some fake ETH for Goerli through a faucet. Make sure that your MetaMask wallet is set to the "Goerli Test Network" before using faucet.
-
-For MyCrypto, you'll need to connect your wallet, make an account, and then click that same link again to request funds. For the official Goerli faucet, you should log into your Alchemy account to receive 2x the amount.
+In order to get fake ETH, we have to ask the network for some. **This fake ETH will only work on this specific testnet.** You can grab some fake ETH for Sepolia through a faucet. Make sure that your MetaMask wallet is set to the "Sepolia Test Network" before using faucet.
 
 | Name             | Link                                  | Amount          | Time         |
 | ---------------- | ------------------------------------- | --------------- | ------------ |
-| Chainlink        | https://faucets.chain.link/goerli     | 0.1             | None         |
-| Official Goerli  | https://goerlifaucet.com              | 0.25            | 24 hrs       |
-| MyCrypto         | https://app.mycrypto.com/faucet       | 0.01            | None         |
+| Ethererum Sepolia Faucet        | https://sepoliafaucet.com/     | 0.5             | 24 hrs         |
+
 
 
 ## 📈 Deploy to Goerli testnet
@@ -88,7 +88,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 module.exports = {
     solidity: "0.8.17",
     networks: {
-      goerli: {
+      sepolia: {
         url: "YOUR_QUICKNODE_API_URL",
         accounts: ["YOUR_PRIVATE_GOERLI_ACCOUNT_KEY"]
       },
@@ -116,7 +116,7 @@ require("dotenv").config();
 module.exports = {
   solidity: "0.8.17",
   networks: {
-    goerli: {
+    sepolia: {
       // This value will be replaced on runtime
       url: process.env.STAGING_QUICKNODE_KEY,
       accounts: [process.env.PRIVATE_KEY],
@@ -138,7 +138,7 @@ PRIVATE_KEY=BLAHBLAH
 ```
 Finally, add `.env` to your `.gitignore` file so Git ignores it and your secrets don't leave your machine! If you're confused by any of this, just watch a YouTube video on it, it's easy stuff!
 
-Next, grab your API URL from the QuickNode dashboard and paste that in. Then, you'll need your **private** Goerli key (not your public address!) which you can grab from metamask and paste that in there as well.
+Next, grab your API URL from the QuickNode dashboard and paste that in. Then, you'll need your **private** Sepolia key (not your public address!) which you can grab from metamask and paste that in there as well.
 
 **Note: Accessing your private key can be done by opening MetaMask, change the network to "Goerli Test Network" and then click the three dots and select "Account Details" > "Export Private Key"**
 
@@ -162,13 +162,13 @@ Account balance: 3198297774605223721
 WavePortal address: 0xd5f08a0ae197482FA808cE84E00E97d940dBD26E
 ```
 
-Copy that address of the deployed contract in the last line and save it somewhere. Don't lose it! You'll need it for the frontend later :). Yours will be different from mine.
+Copy that address of the deployed contract in the last line and save it somewhere (I saved it in my .env file). Don't lose it! You'll need it for the frontend later :). Yours will be different from mine.
 
 **You just deployed your contract. WOOOOOOOOO.**
 
-You can actually take that address and then paste it into Etherscan [here](https://goerli.etherscan.io/). Etherscan is a place that just shows us the state of the blockchain and helps us see where our transaction is at. You should see your transaction here :). It may take a minute to show up!
+You can actually take that address and then paste it into Etherscan [here](https://sepolia.etherscan.io/). Etherscan is a place that just shows us the state of the blockchain and helps us see where our transaction is at. You should see your transaction here :). It may take a minute to show up!
 
-For example, [here's](https://goerli.etherscan.io/address/0x957fe7381be45A31967F1EcfAc6Ff001D8AF8D6c) mine!
+For example, [here's](https://sepolia.etherscan.io/address/0x7b0b2ddd39c3b0d9670207aa95d951aacc3acedb) mine!
 
 ## 🚨 Before you click "Next Lesson"
 
