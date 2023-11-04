@@ -65,10 +65,10 @@ const main = async () => {
   const [owner, randomPerson] = await hre.ethers.getSigners();
   const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
   const waveContract = await waveContractFactory.deploy();
-  await waveContract.deployed();
+  await waveContract.waitForDeployment();
 
-  console.log("Contract deployed to:", waveContract.address);
-  console.log("Contract deployed by:", owner.address);
+  console.log("Contract deployed to:", waveContract.target);
+  console.log("Contract deployed by:", owner.target);
 
   await waveContract.getTotalWaves();
 
@@ -103,7 +103,7 @@ In order to deploy something to the blockchain, we need to have a wallet address
 I also added:
 
 ```javascript
-console.log("Contract deployed by:", owner.address);
+console.log("Contract deployed by:", owner.target);
 ```
 
 I'm doing this just to see the address of the person deploying our contract. I'm curious!
