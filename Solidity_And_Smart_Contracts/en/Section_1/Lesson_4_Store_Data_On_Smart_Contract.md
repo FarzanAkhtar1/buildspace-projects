@@ -68,7 +68,7 @@ const main = async () => {
   await waveContract.waitForDeployment();
 
   console.log("Contract deployed to:", waveContract.target);
-  console.log("Contract deployed by:", owner.target);
+  console.log("Contract deployed by:", owner.address);
 
   await waveContract.getTotalWaves();
 
@@ -103,7 +103,7 @@ In order to deploy something to the blockchain, we need to have a wallet address
 I also added:
 
 ```javascript
-console.log("Contract deployed by:", owner.target);
+console.log("Contract deployed by:", owner.address);
 ```
 
 I'm doing this just to see the address of the person deploying our contract. I'm curious!
