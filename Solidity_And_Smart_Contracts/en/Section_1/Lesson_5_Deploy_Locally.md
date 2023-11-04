@@ -33,16 +33,16 @@ Under the `scripts` folder, create a file called `deploy.js`. Here's the code fo
 ```javascript
 const main = async () => {
   const [deployer] = await hre.ethers.getSigners();
-  const accountBalance = await deployer.getBalance();
+  const accountBalance = await deployer.provider.getBalance(deployer.address);
 
   console.log("Deploying contracts with account: ", deployer.address);
   console.log("Account balance: ", accountBalance.toString());
 
   const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
   const waveContract = await waveContractFactory.deploy();
-  await waveContract.deployed();
+  await waveContract.waitForDeployment();
 
-  console.log("WavePortal address: ", waveContract.address);
+  console.log("WavePortal address: ", waveContract.target);
 };
 
 const runMain = async () => {
