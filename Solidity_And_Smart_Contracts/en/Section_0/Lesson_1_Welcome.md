@@ -1,6 +1,6 @@
 ## Before you begin
 
-As of November 4th 2023, this task is outdated and currently being maintained by Farzan (no affiliation to Farza, just a name coincidence).
+As of November 4th 2023, this task is outdated and currently being maintained by Farzan (no affiliation to Farza).
 
 Some of the key changes I've made are to the code (where function names have been changed), some of the testnets used, and probably other things. I am not an expert in code or smart contract development and I am learning as I go so some of the changes I've made might not be optimal but should work.
 
